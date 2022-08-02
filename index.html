@@ -104,8 +104,8 @@
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="text-base font-semibold text-primary md:text-xl">Hello Everyone, I'm <span class="mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-5xl"> Adrian Pramana</span></h1>
-            <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl">Student & <span class="text-dark dark:text-white">Web Programmer</span></h2>
+            <h1 class="display-excerpt text-base font-semibold text-primary md:text-xl">Hello Everyone, I'm <span class="display-name mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-5xl"> Adrian Pramana</span></h1>
+            <h2 class="display-info mb-5 text-lg font-medium text-secondary lg:text-2xl"><span class="addition-info text-dark dark:text-white"></span></h2>
             <p class="mb-10 font-medium leading-relaxed text-secondary">
               Learning web programming is
               <span class="font-bold text-dark dark:text-white">fun!</span>
@@ -567,6 +567,17 @@
         duration: 2000,
       });
     </script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.display-info, .addition-info', { duration: 2, delay: 1.5, text: 'Student | Web Programmer' });
+      gsap.from('.display-excerpt', { duration: 1, x: -50, opacity: 0, delay: 0.5 });
+      gsap.from('.display-name', { duration: 1, x: -50, opacity: 0, delay: 0.5 });
+    </script>
+
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbyRsM1o9azGZdvXHR7kFLJw1t6LV4Nvm-YuSzTrpfgv7TXVC9MgQmXferUdjGIY5YEcTA/exec';
       const form = document.forms['portfolio-tailwind-css'];
